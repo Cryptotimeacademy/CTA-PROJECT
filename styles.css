@@ -3,8 +3,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background: url(assert/bg-1.jpg);
     font-family: Arial, sans-serif;
+    background-position: center;
+    background-size: cover;
 }
 
 .container {
