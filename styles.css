@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    background-image: url(assert/bg-1.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.container{
+    width: 30%;
+    height: 60vh;
+}
+.count {
+    text-align: center;
+}
+
+#tap-area {
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+#tap-area:hover {
+    background-color: #45a049;
+}
+
+.score-board {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 10px;
+}
+.tap-1{
+    align-items: center;
+    justify-content: center;
+}
+
+.tap-1{
+    display: flex;flex-direction: column;
+}
+.progress-container {
+    width: 80%;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 30px;
+    width: 0;
+    background-color: #4CAF50;
+    transition: width 0.25s;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
