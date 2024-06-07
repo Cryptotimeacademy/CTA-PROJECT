@@ -53,8 +53,9 @@ p {
 }
 
 img{
-    width: 60%;
+    width: 30%;
     height: 90%;
     border-radius: 50%;
     image-orientation: initial;
+    background: transparent;
 }

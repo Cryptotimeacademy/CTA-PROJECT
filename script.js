@@ -50,9 +50,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             progress.style.width = '0%';
         }
 
-        if (progress == 100) {
+        if (progress < 100) {
+             console.log("you have exceded yout point resert to start again");
             rewardCount = 0;
-            tapCount++
+            tapCount = 0
         }
     });
 });
