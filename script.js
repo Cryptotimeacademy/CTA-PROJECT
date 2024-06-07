@@ -1,38 +1,82 @@
+let taps = 0;
+let energy = 500;
+const maxEnergy = 500;
 
+function mine() {
+    if (energy > 0) {
+        taps++;
+        updateTaps();
+        updateEnergy(-1);
+        checkLevelUpgrade();
+    } else {
+        alert("Not enough energy to mine!");
+    }
+}
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    let tapCount = 0;
-    let rewardCount = 0;
-    let coins = 0;
+function updateTaps() {
+    const tapButton = document.querySelector('.tap-button');
+    tapButton.innerText = `${taps} CTT`;
+}
 
-    const tapButton = document.getElementById('tapButton');
-    const tapCountDisplay = document.getElementById('tapCount');
-    const rewardCountDisplay = document.getElementById('rewardCount');
-    const pointsDisplay = document.getElementById('coins');
-    const progress = document.getElementById('progress');
+function updateEnergy(amount) {
+    energy += amount;
+    if (energy < 0) {
+        energy = 0;
+    } else if (energy > maxEnergy) {
+        energy = maxEnergy;
+    }
+    document.getElementById('energy-bar').innerText = `Energy: ${energy}/${maxEnergy}`;
+    document.getElementById('progress-count').innerText = `${energy}/${maxEnergy}`;
+    const progressBar = document.getElementById('progress');
+    progressBar.style.width = `${(energy / maxEnergy) * 100}%`;
+}
 
-    tapButton.addEventListener('click', () => {
-        tapCount++;
-        coins++;
-        tapCountDisplay.textContent = `Taps: ${tapCount}`;
-        pointsDisplay.textContent = `coins: ${coins}`;
+function checkLevelUpgrade() {
+    if (taps >= 10000000) {
+        alert("Congratulations! You have reached the Legendary League!");
+    } else if (taps >= 5000000) {
+        alert("You have reached the Elite League!");
+    } else if (taps >= 2500000) {
+        alert("You have reached the Grandmaster League!");
+    } else if (taps >= 1000000) {
+        alert("You have reached the Master League!");
+    } else if (taps >= 500000) {
+        alert("You have reached the Diamond League!");
+    } else if (taps >= 250000) {
+        alert("You have reached the Platinum League!");
+    } else if (taps >= 10000) {
+        alert("You have reached the Gold League!");
+    } else if (taps >= 5000) {
+        alert("You have reached the Silver League!");
+    } else if (taps >= 2500) {
+        alert("You have reached the Bronze League!");
+    }
+}
 
-        // Update progress bar
-        const progressPercentage = (coins / 100) * 100;
-        progress.style.width = `${progressPercentage}%`;
+setInterval(() => {
+    updateEnergy(1);
+}, 1000);
 
-        if (tapCount === 10) {
-            rewardCount++;
-            rewardCountDisplay.textContent = `Rewards: ${rewardCount}`;
-            tapCount = 0;
-            tapCountDisplay.textContent = `Taps: ${tapCount}`;
-            progress.style.width = '0%';
-        }
+function showRef() {
+    alert("Ref information");
+}
 
-        if (progress < 100) {
-             console.log("you have exceded yout point resert to start again");
-            rewardCount = 0;
-            tapCount = 0
-        }
-    });
-});
+function showTask() {
+    alert("Task information");
+}
+
+function showTap() {
+    alert("Tap information");
+}
+
+function showMenu() {
+    alert("Menu information");
+}
+
+function showBoost() {
+    alert("Boost information");
+}
+
+function showStats() {
+    alert("Stats information");
+}

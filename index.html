@@ -8,25 +8,27 @@
 </head>
 <body>
     <div class="container">
-        <div class="score-board">
-            <p id="tapCount">Taps: 0</p>
-            <p id="rewardCount">Rewards: 0</p>
-            <p id="coins">coins: 0</p>
-          
-        </div>
+      
         <div class="count">
-            <h1>CTT</h1>
-            <div id="tapButton">
-                <img src="assert/coin 2.jpg" alt=""  id="increment-button">
-               
+            <div class="mining-container">
+                <div class="tap-button" onclick="mine()">0 CTT</div>
+                    <!-- <img src="assert/COIN copy.jpg" alt=""> -->
+                
+                <div class="energy-bar" id="energy-bar">Energy: 500/500</div>
             </div>
             <div class="progress-bar">
+                <p id="progress-count">0/500</p>
                 <div id="progress" class="progress"></div>
             </div>
-            
-        
         </div>
-      
+        <div class="menu">
+            <button onclick="showRef()">Ref</button>
+            <button onclick="showTask()">Task</button>
+            <button onclick="showTap()">Tap</button>
+            <button onclick="showMenu()">Menu</button>
+            <button onclick="showBoost()">Boost</button>
+            <button onclick="showStats()">Stats</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

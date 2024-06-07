@@ -1,67 +1,65 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: url(assert/bg-1.jpg);
     font-family: Arial, sans-serif;
-    background-position: center;
-    background-size: cover;
+    text-align: center;
 }
 
 .container {
-    text-align: center;
-}
-.score-board{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-}
-button {
-    padding: 10px 20px;
-    font-size: 20px;
-    cursor: pointer;
+    margin-top: 50px;
 }
 
-p {
-    font-size: 18px;
-    margin-top: 10px;
+.menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.tap-button {
+    width: 100px;
+    height: 100px;
+    background-color: silver;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    /* line-height: 100px; */
+    display: inline-block;
+    /* position: relative; */
+    user-select: none;
+}
+
+.tap-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.energy-bar {
+    width: 80%;
+    height: 20px;
+    background-color: gold;
+    margin: 20px auto;
+    line-height: 20px;
 }
 
 .progress-bar {
-    width: 100%;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    margin-top: 20px;
-    height: 30px;
-    overflow: hidden;
+    width: 80%;
+    background-color: lightgray;
+    height: 20px;
+    margin: 20px auto;
+    position: relative;
 }
 
 .progress {
+    background-color: green;
     height: 100%;
-    width: 70;
-    background-color: #76c7c0;
-    transition: width 0.3s;
-}
-.nav{
-    display: flex;
-    align-items: center;
-    width: 40%;
-    justify-content: space-between;
-
-}
-#tapButton{
-    width: 70%;
-    height: 30vh;
-    border: 1px solid black;
-    border-radius: 50%
+    width: 0;
+    transition: width 0.5s;
 }
 
-img{
+#progress-count {
+    position: absolute;
     width: 100%;
-    height: 100%;
-   border-radius: 50%;
-    image-orientation: initial;
-    background: transparent;
+    text-align: center;
+    top: 0;
+    line-height: 20px;
 }
