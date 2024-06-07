@@ -1,6 +1,10 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background: url(assert/bg-1.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .container {
