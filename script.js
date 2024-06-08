@@ -62,7 +62,7 @@ function showRef() {
 }
 
 function showTask() {
-    alert("Task information");
+    alert("coming soon");
 }
 
 function showTap() {
@@ -70,7 +70,7 @@ function showTap() {
 }
 
 function showMenu() {
-    alert("Menu information");
+    alert("coming soon");
 }
 
 function showBoost() {
