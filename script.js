@@ -1,16 +1,46 @@
+function showContent(section) {
+    // Get all tab content sections
+    var sections = document.querySelectorAll('.container .tabcontent');
+    
+    // Loop through all sections and hide them
+    sections.forEach(function(sec) {
+        sec.classList.remove('visible');
+        sec.classList.add('hidden');
+    });
+    
+    // Show the selected section
+    var selectedSection = document.getElementById(section);
+    selectedSection.classList.remove('hidden');
+    selectedSection.classList.add('visible');
+    
+    // Update active class on navbar links
+    var links = document.querySelectorAll('.navbar a');
+    links.forEach(function(link) {
+        link.classList.remove('active');
+    });
+    
+    // Add active class to the clicked link
+    var activeLink = document.querySelector('.navbar a[onclick="showContent(\'' + section + '\')"]');
+    activeLink.classList.add('active');
+}
+
+function toggleNavbar() {
+    var navbar = document.getElementById("myNavbar");
+    if (navbar.className === "navbar") {
+        navbar.className += " responsive";
+    } else {
+        navbar.className = "navbar";
+    }
+}
+
 let taps = 0;
 let energy = 500;
-const maxEnergy = 500;
 
 function mine() {
-    if (energy > 0) {
-        taps++;
-        updateTaps();
-        updateEnergy(-1);
-        checkLevelUpgrade();
-    } else {
-        alert("Not enough energy to mine!");
-    }
+    taps++;
+    updateTaps();
+    updateEnergy(-1);
+    checkLevelUpgrade();
 }
 
 function updateTaps() {
@@ -22,13 +52,10 @@ function updateEnergy(amount) {
     energy += amount;
     if (energy < 0) {
         energy = 0;
-    } else if (energy > maxEnergy) {
-        energy = maxEnergy;
+    } else if (energy > 500) {
+        energy = 500;
     }
-    document.getElementById('energy-bar').innerText = `Energy: ${energy}/${maxEnergy}`;
-    document.getElementById('progress-count').innerText = `${energy}/${maxEnergy}`;
-    const progressBar = document.getElementById('progress');
-    progressBar.style.width = `${(energy / maxEnergy) * 100}%`;
+    document.getElementById('energy-bar').innerText = `Energy: ${energy}/500`;
 }
 
 function checkLevelUpgrade() {
@@ -62,7 +89,7 @@ function showRef() {
 }
 
 function showTask() {
-    alert("coming soon");
+    alert("Task information");
 }
 
 function showTap() {
@@ -70,7 +97,7 @@ function showTap() {
 }
 
 function showMenu() {
-    alert("coming soon");
+    alert("Menu information");
 }
 
 function showBoost() {
