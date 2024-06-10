@@ -1,58 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mining Page</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mining Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="main">
-        
-        <div class="container">
-            <div id="Ref" class="tabcontent visible">
-                <p class="btn" onclick="showRef()">Ref</p>
-            </div>
-            <div id="Task" class="tabcontent hidden">
-                <p class="btn" onclick="showTask()">Task</p>
-            </div>
-            <div id="Tap" class="tabcontent hidden">
-                <div class="mining-container">
-  
-                    <div class="tap-button" onclick="mine()"><p>0 CTT</p></div>
-                  
-                    <p id="levels">Level 1</p>
-               
-                  <img src="assert/coin 1_edited.jpg" height="300px" width="300px" class="tap-button" onclick="mine()">
-                  <div class="stats-container">
-                    <div class="stat-item">
-                      <div class="energy-bar" id="energy-bar">Energy: 500/500</div>
-                      </div>
-                      
-                       <img src="assert/coin 3.jpg" height="95px"  width="95px" onclick="showBoost()">
-                      </div>
+      <div class="container">
+        <!-- Referral Section -->
+        <div id="Ref" class="tabcontent visible">
+          <div class="ref-container">
+            <form action="" method="get">
+              <h3>0 Referrals</h3>
+              <div class="input-box">
+                <p onclick="showRef()">My invite link:</p>
+                <button type="button" class="asign" onclick="copyInviteLink()">Copy</button>
+              </div>
+              <div class="content">
+                <p>My Referrals:</p>
+                <h3>You have no referrals</h3>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Task Section -->
+        <div id="Task" class="tabcontent hidden">
+          <div class="container">
+            <p class="btn" onclick="showTask()">Task</p>
+          </div>
+        </div>
+        <!-- Tap Section -->
+        <div id="Tap" class="tabcontent hidden">
+          <div class="mining-container">
+            <div class="tap-button" onclick="mine()"><p>0 shares</p></div>
+            <p id="levels">Level 1</p>
+            <img
+              src="assert/coin 1_edited.jpg"
+              height="300px"
+              width="300px"
+              class="tap-button"
+              onclick="mine()"
+            />
+            <div class="stats-container">
+              <div class="stat-item">
+                <div class="stat-item">
+                  <div class="stat-item">
+                    <div class="energy-bar" id="energy-bar">Energy: 500/500</div>
                   </div>
                 </div>
-            <div id="stats" class="tabcontent hidden">
-                <p class="btn" onclick="showStats()">Stats</p>
+                <div class="stat-item">
+                  <!-- <div class="energy-bar" id="energy-bar">Energy: 500/500</div> -->
+                </div>
+              </div>
+              <img
+                src="assert/rocket.png"
+                height="95px"
+                width="95px"
+                onclick="showBoost()"
+              />
             </div>
+          </div>
         </div>
-   </div>
-
-    <div class="navbar" id="myNavbar">
+        <!-- Stats Section -->
+        <div id="stats" class="tabcontent hidden">
+          <div class="container">
+            <p class="btn" onclick="showStats()">Stats</p>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <div class="navbar" id="myNavbar">
         <a href="#" onclick="showContent('Ref')" class="active">Ref</a>
         <a href="#" onclick="showContent('Task')">Task</a>
         <a href="#" onclick="showContent('Tap')">Tap</a>
-        <a href="#" onclick="showContent('stats')">stats</a>
-        <a href="javascript:void(0);" class="icon" onclick="toggleNavbar()">&#9776;</a>
+        <a href="#" onclick="showContent('stats')">Stats</a>
+      </div>
     </div>
-
-</div>
-
-  <footer>
-    <p>&copy; 2024 Tap Coin Miner. All rights reserved.</p>
-  </footer>
-  
-<script src="script.js"></script>
-</body>
+    <!-- <footer>
+      <p>&copy; 2024 Tap Coin Miner. All rights reserved.</p>
+    </footer> -->
+    <script src="script.js"></script>
+  </body>
 </html>
